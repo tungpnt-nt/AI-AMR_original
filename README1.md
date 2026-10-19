@@ -2,18 +2,17 @@
 
 - Metadata were collected from two sources: **[NCBI](www.ncbi.nlm.nih.gov)** and **[BV-BRC](https://www.bv-brc.org/)** for *Salmonella enterica*.
 - The raw input files are:
-  - `Salmonella_NCBI_fn(2).xlsx`
-  - `Salmonella_BVBRC_fn(2).xlsx`
+  - `Salmonella_NCBI.csv`
+  - `Salmonella_BVBRC.csv`
 - Both files contain the following metadata fields: `BioSample`, `Antibiotic`, `Resistant Phenotype`, `Species`, `Strain`, `Assembly`, `Isolation source`, and `Isolation Country`.
 
 - Run the metadata preparation script to validate, standardize, and combine the two datasets:
   ```bash
   python prepare_ai_amr.py \
-      --ncbi "Salmonella_NCBI_fn(2).xlsx" \
-      --bvbrc "Salmonella_BVBRC_fn(2).xlsx" \
+      --ncbi "Salmonella_NCBI.csv" \
+      --bvbrc "Salmonella_BVBRC.csv" \
       --outdir data_processed
   ```
-
 - The preprocessing step performs the following operations:
   - Standardizes antibiotic names and phenotype labels.
   - Adds source information (`NCBI` or `BV-BRC`) for provenance tracking.
