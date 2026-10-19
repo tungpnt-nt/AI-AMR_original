@@ -1,21 +1,63 @@
-## Step 1: Metadata preprocessing
-- Download **genome metadata** and **AMR phenotype metadata** for the target organism from BV-BRC.
-- Retain the variables required for downstream analysis:
-  - Genome metadata: `Genome ID`, `Genome Name`, `Genus`, `Species`, `BioSample Accession`, `Assembly Accession`
-  - AMR metadata: `Genome ID`, `Antibiotic`, `Resistant Phenotype`
-- Clean the datasets:
-  - retain *Salmonella* records;
-  - remove records missing key identifiers or required accessions;
-  - remove incomplete AMR records.
-- Standardize AMR phenotypes:
-  - `Resistant` → `R`
-  - `Intermediate` → `I`
-  - `Susceptible` → `S`
-- Validate the data:
-  - check duplicate `Genome ID` values;
-  - identify repeated `Genome ID + Antibiotic` records;
-  - review conflicting phenotype records.
-- Merge genome and AMR metadata using `Genome ID`.
-- Perform final QC and export the analysis-ready dataset as:
-  `salmonella_genome_amr_metadata.csv`
-Each row represents one **genome–antibiotic observation** for downstream AI-AMR analysis.
+# Salmonella Metadata Preprocessing
+
+This workflow prepares *Salmonella* genome metadata and antimicrobial resistance (AMR) phenotype data from BV-BRC for downstream analysis and machine-learning applications.
+
+## Preprocessing workflow
+
+1. **Download genome metadata from [BV-BRC](https://www.bv-brc.org/).**
+   - Search for *Salmonella* genomes.
+   - Apply the following filters:
+     - Genome Status: `WGS` and `Complete`
+     - Genome Quality: `Good`
+   - Download the metadata in `.csv` format.
+
+2. **Select and clean genome metadata.**
+   - Retain:
+     - `Genome ID`
+     - `Genome Name`
+     - `Genus`
+     - `Species`
+     - `BioSample Accession`
+     - `Assembly Accession`
+   - Retain records where `Genus = Salmonella`.
+   - Remove records with missing `BioSample Accession` or `Assembly Accession`.
+
+3. **Download AMR phenotype metadata from BV-BRC.**
+   - Open the **AMR Phenotypes** section.
+   - Apply `Laboratory Method` as the evidence filter.
+   - Download the metadata in `.csv` format.
+
+4. **Select and clean AMR phenotype data.**
+   - Retain:
+     - `Genome ID`
+     - `Antibiotic`
+     - `Resistant Phenotype`
+   - Remove records with missing values in these fields.
+
+5. **Standardize resistance phenotypes.**
+   - Convert:
+     - `Resistant` → `R`
+     - `Susceptible` → `S`
+     - `Intermediate` → `I`
+   - Remove phenotype values that cannot be mapped to these three categories.
+
+6. **Merge genome and AMR metadata.**
+   - Merge both datasets using `Genome ID`.
+   - Use an inner join to retain genomes present in both datasets.
+
+7. **Perform final data cleaning and inspection.**
+   - Remove completely duplicated rows.
+   - Remove records missing `Genome ID`, `BioSample Accession`, or `Assembly Accession`.
+   - Inspect:
+     - total number of records;
+     - AMR phenotype distribution;
+     - number and distribution of antibiotics;
+     - number of unique genomes, assemblies, and BioSamples;
+     - remaining duplicated rows.
+
+8. **Export the processed dataset.**
+   - Save the final dataset as:
+
+     `Salmonella_fn.csv`
+
+The resulting dataset combines genome identifiers and accessions with standardized antibiotic-resistance phenotypes for downstream exploratory analysis and machine-learning workflows.
