@@ -1,5 +1,7 @@
 # Salmonella Metadata Preprocessing
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tungpnt-nt/AI-AMR_original/blob/main/scripts%20run/Salmonella_metadata_prepare.ipynb)
+
 This workflow prepares *Salmonella* genome metadata and antimicrobial resistance (AMR) phenotype data from BV-BRC for downstream analysis and machine-learning applications.
 
 ## Preprocessing workflow
