@@ -1,6 +1,6 @@
 #### Step 1: Metadata Preparation
 
-- Metadata for *Salmonella enterica* were collected from [**NCBI**](https://github.com/tungpnt-nt/AI-AMR_original/blob/main/www.ncbi.nlm.nih.gov) and [**BV-BRC**](https://www.bv-brc.org/).
+- Metadata for *Salmonella enterica* were collected from [**NCBI**](www.ncbi.nlm.nih.gov) and [**BV-BRC**](https://www.bv-brc.org/).
 - Raw input files:
   - `Salmonella_NCBI.csv`
   - `Salmonella_BVBRC.csv`
