@@ -58,6 +58,6 @@ This workflow prepares *Salmonella* genome metadata and antimicrobial resistance
 8. **Export the processed dataset.**
    - Save the final dataset as:
 
-     `Salmonella_fn.csv`
+     `Salmonella.csv`
 
 The resulting dataset combines genome identifiers and accessions with standardized antibiotic-resistance phenotypes for downstream exploratory analysis and machine-learning workflows.
