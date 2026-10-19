@@ -26,4 +26,4 @@ python prepare_ai_amr.py \
   - `03_label_conflicts.csv`
   - `04_antibiotic_summary.csv`
 
-`02_binary_sr_clean.csv` is used as the cleaned metadata file for the next steps.
+`02_phenotype_clean.csv` is used as the cleaned metadata file for the next steps.
