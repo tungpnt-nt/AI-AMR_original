@@ -1,4 +1,4 @@
-#### Step 1: Metadata Preparation
+### Step 1: Metadata Preparation
 
 - Metadata for *Salmonella enterica* were collected from [**NCBI**](www.ncbi.nlm.nih.gov) and [**BV-BRC**](https://www.bv-brc.org/).
 - Raw input files:
