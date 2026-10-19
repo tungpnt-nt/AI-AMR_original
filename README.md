@@ -1,28 +1,30 @@
-# Module 1: Metadata Preparation for AI-AMR project
+## Step 1: Metadata preprocessing
 
-## Learning outcomes
-By the end of this practical, you will be able to:
-- inspect genome and phenotypic AMR metadata;
-- clean and standardize key variables;
-- identify duplicate and conflicting records;
-- merge genome and phenotype data;
-- export an analysis-ready cohort table.
----
-## Workflow
+- Download **genome metadata** and **AMR phenotype metadata** for the target organism from BV-BRC.
 
-```text
-Genome metadata
-      +
-Phenotypic AMR metadata
-      ↓
-Clean and standardize
-      ↓
-Validate identifiers
-      ↓
-Check duplicates/conflicts
-      ↓
-Merge datasets
-      ↓
-Final quality control
-      ↓
-Analysis-ready cohort table
+- Retain the variables required for downstream analysis:
+  - Genome metadata: `Genome ID`, `Genome Name`, `Genus`, `Species`, `BioSample Accession`, `Assembly Accession`
+  - AMR metadata: `Genome ID`, `Antibiotic`, `Resistant Phenotype`
+
+- Clean the datasets:
+  - retain *Salmonella* records;
+  - remove records missing key identifiers or required accessions;
+  - remove incomplete AMR records.
+
+- Standardize AMR phenotypes:
+  - `Resistant` → `R`
+  - `Intermediate` → `I`
+  - `Susceptible` → `S`
+
+- Validate the data:
+  - check duplicate `Genome ID` values;
+  - identify repeated `Genome ID + Antibiotic` records;
+  - review conflicting phenotype records.
+
+- Merge genome and AMR metadata using `Genome ID`.
+
+- Perform final QC and export the analysis-ready dataset as:
+
+  `salmonella_genome_amr_metadata.csv`
+
+Each row represents one **genome–antibiotic observation** for downstream AI-AMR analysis.
