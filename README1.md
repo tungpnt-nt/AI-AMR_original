@@ -22,4 +22,5 @@ python prepare_ai_amr.py \
   - `02_phenotype_clean.csv` - cleaned phenotype metadata used in the next steps
   - `03_label_conflicts.csv` - conflicting Assembly + Antibiotic records for review
   - `04_antibiotic_summary.csv` - phenotype counts for each antibiotic
+  
 `02_phenotype_clean.csv` is used as the cleaned metadata file for the next steps.
