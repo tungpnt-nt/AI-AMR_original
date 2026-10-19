@@ -1,6 +1,6 @@
 #### Step 1: Metadata Preparation
 
-- Metadata were collected from two sources: **NCBI** and **[BV-BRC](https://www.bv-brc.org/)** for *Salmonella enterica*.
+- Metadata were collected from two sources: **[NCBI](www.ncbi.nlm.nih.gov)** and **[BV-BRC](https://www.bv-brc.org/)** for *Salmonella enterica*.
 - The raw input files are:
   - `Salmonella_NCBI_fn(2).xlsx`
   - `Salmonella_BVBRC_fn(2).xlsx`
