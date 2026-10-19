@@ -1,4 +1,4 @@
-# Module 1: Metadata Preparation for AI-AMR
+# Module 1: Metadata Preparation for AI-AMR project
 
 ## Learning outcomes
 By the end of this practical, you will be able to:
