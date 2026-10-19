@@ -18,8 +18,7 @@ python prepare_ai_amr.py \
   - combines the NCBI and BV-BRC datasets;
   - uses `Assembly` as the isolate ID;
   - checks duplicated or conflicting `Assembly + Antibiotic` records;
-  - removes `Intermediate (I)` records;
-  - converts `S` to `0` and `R` to `1`.
+
 - No overlapping `BioSample` or `Assembly` IDs were found between the two datasets, so they are concatenated after preprocessing.
 - Main outputs:
   - `01_merged_with_provenance.csv`
