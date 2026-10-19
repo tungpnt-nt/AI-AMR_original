@@ -22,9 +22,8 @@ python prepare_ai_amr.py \
 - No overlapping `BioSample` or `Assembly` IDs were found between the two datasets, so they are concatenated after preprocessing.
 - Main outputs:
   - `01_merged_with_provenance.csv`
-  - `02_binary_sr_clean.csv`
+  - `02_phenotype_clean.csv`
   - `03_label_conflicts.csv`
-  - `04_excluded_rows.csv`
-  - `05_antibiotic_summary.csv`
+  - `04_antibiotic_summary.csv`
 
 `02_binary_sr_clean.csv` is used as the cleaned metadata file for the next steps.
